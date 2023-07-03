@@ -28,8 +28,12 @@ class UsersDataService {
             console.error('💣 ERROR ❗❗❗ at users.js addUser: ', error);
           }
     };
-
-
+    getUser = async ( id ) => {
+        const userDoc = doc(db, COLLECTIONS.USERS, id);
+        const userSnapshot = await getDoc(userDoc);
+        
+        return userSnapshot.exists() ? userSnapshot.data() : null;
+    }
 
 }
 
