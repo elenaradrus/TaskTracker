@@ -1,16 +1,12 @@
-import {useNavigate} from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { setUser } from '../../store/User/actions';
+
 
 import {
-    AutoComplete,
     Button,
-    Cascader,
-    Checkbox,
-    Col,
     Form,
-    Input,
-    InputNumber,
-    Row,
-    Select,
+    Input
 } from 'antd';
 
 import useSignUp from '../../hooks/useRegister';
@@ -20,18 +16,23 @@ const Register = () => {
     const navigate = useNavigate();
     const { signUp, loading } = useSignUp();
 
+    const dispatch = useDispatch();
+    const user = useSelector((state) => state.user);
+
+
     const [form] = Form.useForm();
 
-    const onFinish = ({email, password}) => {
+    const onFinish = ({ email, password }) => {
         signUp(email, password)
-        .then(async (user) => {
-          navigate('/');
-        })
-        .catch((error) => {
-          console.error('💣 ERROR ❗❗❗ at RegisterForm.js: onFinish: ', error);
-        });
-      };
-  
+            .then(async (user) => {
+                dispatch(setUser(user));
+                navigate('/');
+            })
+            .catch((error) => {
+                console.error('💣 ERROR ❗❗❗ at RegisterForm.js: onFinish: ', error);
+            });
+    };
+
 
     const formItemLayout = {
         labelCol: {

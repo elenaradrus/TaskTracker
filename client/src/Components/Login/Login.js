@@ -1,22 +1,20 @@
 import {useNavigate} from 'react-router-dom';
 import useLogin from '../../hooks/useLogin';
+import { setUser } from '../../store/User/actions';
+import { useDispatch, useSelector } from 'react-redux';
 
 import {
-    AutoComplete,
     Button,
-    Cascader,
-    Checkbox,
-    Col,
     Form,
-    Input,
-    InputNumber,
-    Row,
-    Select,
+    Input
 } from 'antd';
 
 const Login = () => {
     const { login, loading, error } = useLogin();
     const navigate = useNavigate();
+
+    const dispatch = useDispatch();
+    const user = useSelector((state) => state.user);
 
     const [form] = Form.useForm();
 
@@ -24,6 +22,7 @@ const Login = () => {
         login(email, password)
         .then(async (user) => {
             if(user) {
+                dispatch(setUser(user));
                 navigate('/');
             } else {
                 console.log("Este usuario no existe")
