@@ -1,9 +1,9 @@
 import { logout } from "../../store/User/actions";
-import {useNavigate} from 'react-router-dom';
-import { useDispatch} from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import Menu from "../../Components/Menu/Menu";
 
-
-const Home = () => {
+const User = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
@@ -12,12 +12,13 @@ const Home = () => {
         navigate('/login')
     }
 
-    return ( 
+
+    return (
         <div>
-            HOME
             <button onClick={handleLogOut}>Salir</button>
+            <Menu />
         </div>
-     );
+    );
 }
- 
-export default Home;
+
+export default User;

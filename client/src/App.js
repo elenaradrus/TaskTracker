@@ -3,9 +3,10 @@ import { Provider } from 'react-redux';
 import { store } from './store';
 
 import PrivateRoute from './routes/PrivateRoute';
-import Home from './Components/Home/Home';
+import Home from './pages/Home/Home';
 import Login from './Components/Login/Login';
 import Register from './Components/Register/Register';
+import User from './pages/User/User';
 
 function App() {
   return (
@@ -17,6 +18,11 @@ function App() {
           <Route path='/' element={
             <PrivateRoute>
               <Home />
+            </PrivateRoute>
+          } />
+          <Route path='/user' element={
+            <PrivateRoute>
+              <User />
             </PrivateRoute>
           } />
         </Routes>
