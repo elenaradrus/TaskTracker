@@ -1,3 +1,9 @@
+.menuContainer {
+    width: 100vw;
+    position: sticky;
+    background-color: aqua;
+}
+
 .spaceIcons {
     display: flex;
     justify-content: space-around;
@@ -9,11 +15,7 @@
     font-size: 2rem;
 }
 
-.menuContainer {
-    background-color: aqua;
-    width: 100vw;
-    margin-top: auto;
-}
+
 
 
 

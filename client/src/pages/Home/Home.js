@@ -1,11 +1,11 @@
 import Menu from "../../Components/Menu/Menu";
-import Calendar from "../../Components/Calendar/Calendar";
+import CalendarComponent from "../../Components/CalendarComponent/CalendarComponent";
 import './Home.styles.css'
 
 const Home = () => {
     return ( 
-    <div className="HomeContainer">
-        <Calendar />
+    <div className="homeContainer">
+        <CalendarComponent />
         <Menu />
     </div> 
     );
