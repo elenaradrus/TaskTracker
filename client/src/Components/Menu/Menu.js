@@ -24,7 +24,7 @@ const Menu = () => {
     return (
         <div className="menuContainer">
 
-            <Space>
+            <Space className='spaceIcons'>
                 <HomeOutlined className='icon' onClick={handleHomeOnClick}/>
                 <PlusCircleOutlined className='icon'/>
                 <UserOutlined className='icon' onClick={handleUserOnclick}/>

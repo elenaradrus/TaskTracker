@@ -1,8 +1,20 @@
-.icon {
-    color: blue;
-    font-size: 1.5rem;
+.spaceIcons {
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem 0rem;   
 }
 
-/* .menuContainer {
-    background-color: chartreuse;
-} */
+.icon {
+    color: blue;
+    font-size: 2rem;
+}
+
+.menuContainer {
+    background-color: aqua;
+    width: 100vw;
+    margin-top: auto;
+}
+
+
+
+ 
