@@ -1,11 +1,12 @@
 import './CalendarComponent.styles.css'
 
 import React, { useState } from 'react';
-import dayjs from 'dayjs';
-import { Calendar, theme } from 'antd';
+//import dayjs from 'dayjs';
+import { Calendar } from 'antd';
 
 
 const CalendarComponent = () => {
+
 
   const [value, setValue] = useState();
   const [selectedValue, setSelectedValue] = useState();

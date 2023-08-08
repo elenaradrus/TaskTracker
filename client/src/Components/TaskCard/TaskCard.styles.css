@@ -1,0 +1,13 @@
+.cardContainer {
+    width: 22rem;
+    max-height: 12rem;
+    overflow-y: auto;
+}
+
+.taskCompleted {
+    text-decoration: line-through; 
+}
+
+.taskInProgress {
+    text-decoration: none;
+}
